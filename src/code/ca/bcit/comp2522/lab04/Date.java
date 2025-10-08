@@ -16,7 +16,7 @@ package ca.bcit.comp2522.lab04;
  * @author Ryan Fiset, Larry Lin
  * @version 1.0
  */
-public class Date implements Printable
+public class Date implements Comparable<Date>, Printable
 {
     private static final int CURRENT_YEAR = 2025;
     private static final int YEAR_1800    = 1800;
@@ -194,6 +194,11 @@ public class Date implements Printable
     public int getYear()
     {
         return year;
+    }
+
+    public static int getCurrentYear()
+    {
+        return CURRENT_YEAR;
     }
 
     /**
@@ -510,7 +515,24 @@ public class Date implements Printable
     }
 
     @Override
-    public void display() {
+    public void display()
+    {
         System.out.println(getYYYYMMDD());
+    }
+
+    @Override
+    public int compareTo(Date other)
+    {
+        if (this.year != other.year)
+        {
+            return Integer.compare(this.year, other.year);
+        }
+
+        if (this.month != other.month)
+        {
+            return Integer.compare(this.month, other.month);
+        }
+
+        return Integer.compare(this.day, other.day);
     }
 }

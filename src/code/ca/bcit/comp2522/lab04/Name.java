@@ -4,11 +4,11 @@ public class Name implements Printable
 {
     private static final int MAX_NAME_LENGTH = 50;
 
-    private String first;
-    private String last;
+    private final String first;
+    private final String last;
 
-    public Name(String first,
-                String last)
+    public Name(final String first,
+                final String last)
     {
         validateName(first);
         validateName(last);
@@ -17,9 +17,10 @@ public class Name implements Printable
         this.last  = last;
     }
 
-    private static void validateName(String name)
+    private static void validateName(final String name)
     {
-        if (name == null || name.isBlank())
+        if (name == null ||
+            name.isBlank())
         {
             throw new IllegalArgumentException();
         }
@@ -44,5 +45,9 @@ public class Name implements Printable
     public String getLast()
     {
         return last;
+    }
+
+    public String getFullName() {
+        return first + " " + last;
     }
 }

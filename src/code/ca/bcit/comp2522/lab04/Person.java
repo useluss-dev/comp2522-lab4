@@ -1,14 +1,14 @@
 package ca.bcit.comp2522.lab04;
 
-public class Person implements Printable, Reversible
+public class Person implements Comparable<Person>, Printable, Reversible
 {
-    private Date dateOfBirth;
-    private Date dateOfDeath;
-    private Name name;
+    private final Date dateOfBirth;
+    private final Date dateOfDeath;
+    private final Name name;
 
-    public Person(Date dateOfBirth,
-                  Date dateOfDeath,
-                  Name name)
+    public Person(final Date dateOfBirth,
+                  final Date dateOfDeath,
+                  final Name name)
     {
         validatePerson(dateOfBirth, name);
 
@@ -17,8 +17,8 @@ public class Person implements Printable, Reversible
         this.name        = name;
     }
 
-    private static void validatePerson(Date dateOfBirth,
-                                       Name name)
+    private static void validatePerson(final Date dateOfBirth,
+                                       final Name name)
     {
         if (dateOfBirth == null)
         {
@@ -29,6 +29,12 @@ public class Person implements Printable, Reversible
         {
             throw new IllegalArgumentException("Name cannot be null");
         }
+    }
+
+    @Override
+    public int compareTo(final Person other)
+    {
+        return other.dateOfBirth.compareTo(this.dateOfBirth);
     }
 
     @Override
@@ -63,5 +69,21 @@ public class Person implements Printable, Reversible
         builder.reverse();
 
         System.out.println(builder.toString());
+    }
+
+
+    public Date getDateOfBirth()
+    {
+        return dateOfBirth;
+    }
+
+    public Date getDateOfDeath()
+    {
+        return dateOfDeath;
+    }
+
+    public Name getName()
+    {
+        return name;
     }
 }
