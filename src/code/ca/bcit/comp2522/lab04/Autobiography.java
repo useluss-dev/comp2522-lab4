@@ -7,18 +7,19 @@ package ca.bcit.comp2522.lab04;
  * @author Ryan Fiset, Larry Lin
  * @version 1.0
  */
-public class Autobiography extends Biography implements Printable {
-
+public class Autobiography extends Biography implements Printable
+{
     /**
      * Constructs an Autobiography instance.
      *
-     * @param title the title of the autobiography
+     * @param title         the title of the autobiography
      * @param yearPublished the year the autobiography was published
-     * @param author the author of the autobiography, who is also the subject
+     * @param author        the author of the autobiography, who is also the subject
      */
     public Autobiography(final String title,
                          final int yearPublished,
-                         final Author author) {
+                         final Author author)
+    {
         super(title, yearPublished, author, author);
     }
 
@@ -26,7 +27,8 @@ public class Autobiography extends Biography implements Printable {
      * Displays information about the autobiography.
      */
     @Override
-    public void display() {
+    public void display()
+    {
         System.out.println("Autobiography: " + getTitle() + ", Published: " + getYearPublished() +
                            ", Author: " + getAuthor().getName().getFullName() +
                            ", Subject: " + getSubject().getName().getFullName());

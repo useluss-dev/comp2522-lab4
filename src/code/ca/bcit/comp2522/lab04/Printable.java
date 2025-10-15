@@ -7,8 +7,8 @@ package ca.bcit.comp2522.lab04;
  * @author Ryan Fiset, Larry Lin
  * @version 1.0
  */
-public interface Printable {
-
+public interface Printable
+{
     /**
      * Displays the content of the implementing class.
      * This method should be overridden in implementing classes to provide

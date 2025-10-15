@@ -9,7 +9,8 @@ public class Main
     static Autobiography auto1, auto2, auto3, auto4, auto5;
     static Author georgeOrwell, harperLee, janeAusten, fScottFitzgerald, hermanMelville;
 
-    static {
+    static
+    {
         // Create authors for the books
         final Date georgeOrwellBirth = new Date(1903, 5, 25);
         final Date georgeOrwellDeath = new Date(1950, 1, 21);
@@ -44,16 +45,24 @@ public class Main
         book5 = new Book("Moby-Dick", 1851, hermanMelville);
 
         // Biography subjects
-        final Person robertMoses = new Person(new Date(1888, 11, 18), new Date(1981, 6, 29), new Name("Robert", "Moses"));
+        final Person robertMoses = new Person(new Date(1888, 11, 18), new Date(1981, 6, 29), new Name("Robert",
+                                                                                                      "Moses"));
         final Person steveJobs = new Person(new Date(1955, 1, 24), new Date(2011, 9, 5), new Name("Steve", "Jobs"));
-        final Person winstonChurchill = new Person(new Date(1874, 10, 30), new Date(1965, 1, 24), new Name("Winston", "Churchill"));
-        final Person alexanderHamilton = new Person(new Date(1855, 1, 11), new Date(1904, 6, 12), new Name("Alexander", "Hamilton"));
-        final Person albertEinstein = new Person(new Date(1879, 2, 14), new Date(1955, 3, 18), new Name("Albert", "Einstein"));
+        final Person winstonChurchill = new Person(new Date(1874, 10, 30), new Date(1965, 1, 24), new Name("Winston",
+                                                                                                           "Churchill"
+        ));
+        final Person alexanderHamilton = new Person(new Date(1855, 1, 11), new Date(1904, 6, 12), new Name("Alexander"
+            , "Hamilton"));
+        final Person albertEinstein = new Person(new Date(1879, 2, 14), new Date(1955, 3, 18), new Name("Albert",
+                                                                                                        "Einstein"));
 
         // Biography authors
         final Author robertCaro = new Author(new Date(1936, 9, 30), null, new Name("Robert", "Caro"), "Biography");
-        final Author walterIsaacson = new Author(new Date(1952, 4, 20), null, new Name("Walter", "Isaacson"), "Biography");
-        final Author martinGilbert = new Author(new Date(1936, 9, 25), new Date(2015, 1, 3), new Name("Martin", "Gilbert"), "History");
+        final Author walterIsaacson = new Author(new Date(1952, 4, 20), null, new Name("Walter", "Isaacson"),
+                                                 "Biography");
+        final Author martinGilbert = new Author(new Date(1936, 9, 25), new Date(2015, 1, 3), new Name("Martin",
+                                                                                                      "Gilbert"),
+                                                "History");
         final Author ronChernow = new Author(new Date(1949, 2, 3), null, new Name("Ron", "Chernow"), "Biography");
 
         // Biographies
@@ -64,11 +73,19 @@ public class Main
         bio5 = new Biography("Einstein: His Life and Universe", 2007, walterIsaacson, albertEinstein);
 
         // Autobiographies
-        final Author anneFrank = new Author(new Date(1929, 5, 12), new Date(1945, 1, 1), new Name("Anne", "Frank"), "Diary");
-        final Author nelsonMandela = new Author(new Date(1918, 6, 18), new Date(2013, 11, 5), new Name("Nelson", "Mandela"), "Autobiography");
-        final Author mahatmaGandhi = new Author(new Date(1869, 9, 2), new Date(1948, 1, 30), new Name("Mahatma", "Gandhi"), "Autobiography");
-        final Author mayaAngelou = new Author(new Date(1928, 3, 4), new Date(2014, 4, 28), new Name("Maya", "Angelou"), "Autobiography");
-        final Author malcolmX = new Author(new Date(1925, 4, 19), new Date(1965, 1, 21), new Name("Malcolm", "X"), "Autobiography");
+        final Author anneFrank = new Author(new Date(1929, 5, 12), new Date(1945, 1, 1), new Name("Anne", "Frank"),
+                                            "Diary");
+        final Author nelsonMandela = new Author(new Date(1918, 6, 18), new Date(2013, 11, 5), new Name("Nelson",
+                                                                                                       "Mandela"),
+                                                "Autobiography");
+        final Author mahatmaGandhi = new Author(new Date(1869, 9, 2), new Date(1948, 1, 30), new Name("Mahatma",
+                                                                                                      "Gandhi"),
+                                                "Autobiography");
+        final Author mayaAngelou = new Author(new Date(1928, 3, 4), new Date(2014, 4, 28), new Name("Maya",
+                                                                                                    "Angelou"),
+                                              "Autobiography");
+        final Author malcolmX = new Author(new Date(1925, 4, 19), new Date(1965, 1, 21), new Name("Malcolm", "X"),
+                                           "Autobiography");
 
         auto1 = new Autobiography("The Diary of a Young Girl", 1947, anneFrank);
         auto2 = new Autobiography("Long Walk to Freedom", 1994, nelsonMandela);
@@ -118,7 +135,8 @@ public class Main
         System.out.println(book1.getTitle() + " vs " + book2.getTitle() + ": " + book1.compareTo(book2));
         System.out.println(book3.getTitle() + " vs " + book4.getTitle() + ": " + book3.compareTo(book4));
         System.out.println("\nComparing authors by birthdate:");
-        System.out.println(georgeOrwell.getName().getFullName() + " vs " + harperLee.getName().getFullName() + ": " + georgeOrwell.compareTo(harperLee));
+        System.out.println(georgeOrwell.getName().getFullName() + " vs " + harperLee.getName()
+                                                                                    .getFullName() + ": " + georgeOrwell.compareTo(harperLee));
         System.out.println(janeAusten.getName().getFullName() + " vs " + fScottFitzgerald.getName().getFullName() +
                            ": " + janeAusten.compareTo(fScottFitzgerald));
 

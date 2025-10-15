@@ -8,8 +8,8 @@ package ca.bcit.comp2522.lab04;
  * @author Ryan Fiset, Larry Lin
  * @version 1.0
  */
-public class Person implements Comparable<Person>, Printable, Reversible {
-
+public class Person implements Comparable<Person>, Printable, Reversible
+{
     private final Date dateOfBirth;
     private final Date dateOfDeath;
     private final Name name;
@@ -19,32 +19,36 @@ public class Person implements Comparable<Person>, Printable, Reversible {
      *
      * @param dateOfBirth the date of birth of the person
      * @param dateOfDeath the date of death of the person (can be null for living people)
-     * @param name the name of the person
+     * @param name        the name of the person
      */
     public Person(final Date dateOfBirth,
                   final Date dateOfDeath,
-                  final Name name) {
+                  final Name name)
+    {
         validatePerson(dateOfBirth, name);
 
         this.dateOfBirth = dateOfBirth;
         this.dateOfDeath = dateOfDeath;
-        this.name = name;
+        this.name        = name;
     }
 
     /**
      * Validates the person's attributes (date of birth and name).
      *
      * @param dateOfBirth the date of birth of the person
-     * @param name the name of the person
+     * @param name        the name of the person
      * @throws IllegalArgumentException if the date of birth or name is invalid
      */
     private static void validatePerson(final Date dateOfBirth,
-                                       final Name name) {
-        if (dateOfBirth == null) {
+                                       final Name name)
+    {
+        if (dateOfBirth == null)
+        {
             throw new IllegalArgumentException("Date of birth cannot be null");
         }
 
-        if (name == null) {
+        if (name == null)
+        {
             throw new IllegalArgumentException("Name cannot be null");
         }
     }
@@ -53,10 +57,12 @@ public class Person implements Comparable<Person>, Printable, Reversible {
      * Compares this person with another based on the date of birth.
      *
      * @param other the other person to compare with
-     * @return a negative integer, zero, or a positive integer as this person's birthdate is before, the same as, or after the other person's birthdate
+     * @return a negative integer, zero, or a positive integer as this person's birthdate is before, the same as, or
+     * after the other person's birthdate
      */
     @Override
-    public int compareTo(final Person other) {
+    public int compareTo(final Person other)
+    {
         return other.dateOfBirth.compareTo(this.dateOfBirth);
     }
 
@@ -64,7 +70,8 @@ public class Person implements Comparable<Person>, Printable, Reversible {
      * Displays the person's name, date of birth, and date of death (if available).
      */
     @Override
-    public void display() {
+    public void display()
+    {
         System.out.print("Name: ");
         name.display();
 
@@ -72,9 +79,12 @@ public class Person implements Comparable<Person>, Printable, Reversible {
         dateOfBirth.display();
 
         System.out.print(", Date of Death: ");
-        if (dateOfDeath != null) {
+        if (dateOfDeath != null)
+        {
             dateOfDeath.display();
-        } else {
+        }
+        else
+        {
             System.out.println("Still alive.");
         }
     }
@@ -83,7 +93,8 @@ public class Person implements Comparable<Person>, Printable, Reversible {
      * Reverses and displays the full name of the person.
      */
     @Override
-    public void backward() {
+    public void backward()
+    {
         final StringBuilder builder = new StringBuilder();
 
         builder.append(name.getFirst());
@@ -99,7 +110,8 @@ public class Person implements Comparable<Person>, Printable, Reversible {
      *
      * @return the date of birth
      */
-    public Date getDateOfBirth() {
+    public Date getDateOfBirth()
+    {
         return dateOfBirth;
     }
 
@@ -108,7 +120,8 @@ public class Person implements Comparable<Person>, Printable, Reversible {
      *
      * @return the date of death, or null if the person is still alive
      */
-    public Date getDateOfDeath() {
+    public Date getDateOfDeath()
+    {
         return dateOfDeath;
     }
 
@@ -117,7 +130,8 @@ public class Person implements Comparable<Person>, Printable, Reversible {
      *
      * @return the name of the person
      */
-    public Name getName() {
+    public Name getName()
+    {
         return name;
     }
 }

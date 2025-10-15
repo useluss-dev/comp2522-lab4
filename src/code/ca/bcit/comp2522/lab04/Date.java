@@ -367,7 +367,6 @@ public class Date implements Comparable<Date>, Printable
     }
 
 
-
     /**
      * Returns the name of the weekday that corresponds to a given day code.
      * <p>

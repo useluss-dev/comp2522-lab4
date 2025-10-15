@@ -8,8 +8,8 @@ package ca.bcit.comp2522.lab04;
  * @author Ryan Fiset, Larry Lin
  * @version 1.0
  */
-public interface Reversible {
-
+public interface Reversible
+{
     /**
      * Reverses the content of the implementing class and displays it.
      * This method should be overridden in implementing classes to provide
